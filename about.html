@@ -1,7 +1,3 @@
-<!-- ==========================================
-about.html — EASE IN Hospice Care, Inc.
-Place next to index.html at the repo root.
-========================================== -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,46 +7,299 @@ Place next to index.html at the repo root.
 <link rel="icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/ease_in_icon_only.png" />
 <style>
-:root{--text:#1f2937;--muted:#6b7280;--brand:#7b1a1a;--brand-2:#b23232;--border:#e5e7eb;--card:#fafafa;--radius:18px}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text)}
-.wrap{max-width:900px;margin:0 auto;padding:20px}
-header{border-bottom:1px solid var(--border);padding:14px 0}
-a{color:var(--brand);text-decoration:none}
-.hero{display:grid;gap:8px;margin:20px 0 10px}
-h1{margin:6px 0}
-.tag{color:var(--muted)}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:16px}
+:root{
+  --text:#1f2937;
+  --muted:#6b7280;
+  --brand:#7b1a1a;
+  --brand-2:#b23232;
+  --border:#e5e7eb;
+  --card:#fafafa;
+  --accent:#f0e6e6;
+  --radius:18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  color:var(--text);
+  background: linear-gradient(135deg, #ffffff 0%, #fdf5f5 100%);
+  min-height: 100vh;
+}
+
+.wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:20px;
+}
+
+header{
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+}
+
+a{
+  color:var(--brand);
+  text-decoration:none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--brand-2);
+  transform: translateX(-3px);
+  display: inline-block;
+}
+
+.hero{
+  display:grid;
+  gap:8px;
+  margin:30px 0 20px;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+h1{
+  margin:6px 0;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tag{
+  color:var(--muted);
+  font-size: 1.1em;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px;
+  margin-top:24px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  color: var(--brand);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h2::before {
+  font-size: 1.3em;
+}
+
+.mission-icon::before { content: '🎯'; }
+.approach-icon::before { content: '💝'; }
+.contact-icon::before { content: '📞'; }
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li {
+  padding: 12px 0 12px 40px;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.card ul li:hover {
+  background: var(--accent);
+  padding-left: 50px;
+}
+
+.card ul li::before {
+  position: absolute;
+  left: 10px;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+.card ul li:hover::before {
+  transform: scale(1.2);
+}
+
+.card ul li:nth-child(1)::before { content: '🤝'; }
+.card ul li:nth-child(2)::before { content: '💬'; }
+.card ul li:nth-child(3)::before { content: '🔗'; }
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--accent);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: var(--brand);
+  color: white;
+  transform: translateX(10px);
+}
+
+.contact-item:hover a {
+  color: white;
+}
+
+.contact-item::before {
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover::before {
+  transform: rotate(360deg);
+}
+
+.contact-name::before { content: '👤'; }
+.contact-email::before { content: '✉️'; }
+.contact-phone::before { content: '📱'; }
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(123, 26, 26, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(123, 26, 26, 0.4);
+}
+
+.decorative-hearts {
+  text-align: center;
+  font-size: 2em;
+  margin: 30px 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+footer {
+  color:var(--muted);
+  margin:40px 0 20px;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .wrap {
+    padding: 15px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+}
 </style>
 </head>
 <body>
 <header class="wrap">
-<a href="/">← Home</a>
+<a href="index.html">← Home</a>
 </header>
+
 <main class="wrap">
 <section class="hero">
-<img src="/assets/logo.png" width="64" height="64" alt="EASE IN logo" />
+<div class="logo-wrapper">
+<img src="/assets/logo.png" width="80" height="80" alt="EASE IN logo" />
+</div>
 <h1>About EASE IN Hospice Care, Inc.</h1>
-<div class="tag">Tagline: <em>Helping others to ease in transitions to care.</em></div>
+<div class="tag">✨ <em>Helping others to ease in transitions to care.</em> ✨</div>
 </section>
 
+<div class="decorative-hearts">💕 🕊️ 💕</div>
 
 <section class="card">
-<h2>Our Mission</h2>
+<h2 class="mission-icon">Our Mission</h2>
 <p>We help families navigate hospice care options with compassion, clarity, and respect. Our team provides timely information and coordination so loved ones can focus on what matters most.</p>
-<h2>Our Approach</h2>
-<ul>
-<li>Compassion first — honoring dignity at every step.</li>
-<li>Clear communication — translating options into plain language.</li>
-<li>Practical support — connecting you with the right resources.</li>
-</ul>
-<h2>Contact</h2>
-<p>Contact: <strong>Claudia Neri</strong><br/>
-<a href="mailto:easeinhospice@yahoo.com">easeinhospice@yahoo.com</a><br/>
-<a href="tel:17472156794">747.215.6794</a></p>
 </section>
 
+<section class="card">
+<h2 class="approach-icon">Our Approach</h2>
+<ul>
+<li><strong>Compassion first</strong> — honoring dignity at every step.</li>
+<li><strong>Clear communication</strong> — translating options into plain language.</li>
+<li><strong>Practical support</strong> — connecting you with the right resources.</li>
+</ul>
+</section>
 
-<p style="color:var(--muted);margin:26px 0">© 2025 EASE IN Hospice Care, Inc. — All rights reserved.</p>
+<section class="card">
+<h2 class="contact-icon">Contact</h2>
+<div class="contact-info">
+<div class="contact-item contact-name">
+<strong>Claudia Neri</strong>
+</div>
+<div class="contact-item contact-email">
+<a href="mailto:easeinhospice@yahoo.com">easeinhospice@yahoo.com</a>
+</div>
+<div class="contact-item contact-phone">
+<a href="tel:17472156794">747.215.6794</a>
+</div>
+</div>
+<a href="mailto:easeinhospice@yahoo.com" class="cta-button">📧 Get in Touch Today</a>
+</section>
+
+<footer>
+<p>© 2025 EASE IN Hospice Care, Inc. — All rights reserved.</p>
+<p>🏥 Serving families with care and compassion 💙</p>
+</footer>
 </main>
 </body>
 </html>
