@@ -1,70 +1,154 @@
-<!-- ==========================================
-<main class="wrap hero">
-<section class="hero-card">
-<div class="card">
-<h2 class="title">Care that meets you at home.</h2>
-<p class="subtitle">We partner with families to navigate hospice options with dignity and clarity.</p>
-<div class="cta">
-<a class="btn primary" href="mailto:easeinhospice@yahoo.com?subject=Consultation%20Request">Email Us</a>
-<a class="btn secondary" href="tel:17472156794">Call 747.215.6794</a>
-</div>
-</div>
-<div class="card">
-<img src="/assets/logo.png" alt="EASE IN logo large" style="width:100%;max-width:360px;display:block;margin:0 auto;" />
-</div>
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EASE IN Hospice Care, Inc.</title>
+  <meta name="description" content="EASE IN Hospice Care, Inc. — information, contact, and resources." />
 
+  <!-- FAVICONS / ICONS -->
+  <link rel="icon" href="/ease-in-hospice/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ease-in-hospice/icons/ease_in_icon_only.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/ease-in-hospice/icons/ease_in_icon_only.png">
 
-<section class="grid" aria-label="Quick info">
-<div class="card info">
-<h3>What we do</h3>
-<p>Guidance, coordination, and resources to help you and your loved ones transition into hospice care.</p>
-</div>
-<div class="card info">
-<h3>Who we serve</h3>
-<p>Patients and families seeking clear information and compassionate support.</p>
-</div>
-<div class="card info">
-<h3>Where we operate</h3>
-<p>Greater Los Angeles and nearby communities.</p>
-</div>
-</section>
+  <!-- Manifest (PWA-lite) -->
+  <link rel="manifest" href="/ease-in-hospice/manifest.webmanifest">
 
+  <!-- Open Graph (social share) -->
+  <meta property="og:title" content="EASE IN Hospice Care, Inc.">
+  <meta property="og:description" content="Comfort, dignity, and guidance for families.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/ease-in-hospice/icons/ease_in_icon_only.png">
+  <meta property="og:url" content="https://guayomerino-sketch.github.io/ease-in-hospice/">
 
-<section class="map" aria-label="Map">
-<!-- Google location embed (searches for your organization name). If you have a street address, replace q= with the full address. -->
-<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-src="https://www.google.com/maps?q=715%20N.%20Central%20Ave.%20Unit%20214%20Glendale%2C%20CA%2091203&output=embed"
-title="Google Map location of EASE IN Hospice Care, Inc."></iframe>
-</section>
-</main>
+  <style>
+    :root{
+      --bg:#ffffff; --text:#1f2937; --muted:#6b7280;
+      --brand:#7b1a1a; --brand-2:#b23232; --ring:rgba(123,26,26,.15);
+      --card:#fafafa; --border:#e5e7eb; --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);background:var(--bg);}
+    a{color:var(--brand);text-decoration:none}
+    a:focus{outline:3px solid var(--ring);border-radius:8px}
 
+    header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg, rgba(123,26,26,.06), transparent 70%);backdrop-filter:saturate(1.2) blur(4px);border-bottom:1px solid var(--border)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{width:40px;height:40px}
+    .brand h1{font-size:1.125rem;margin:0;font-weight:700;letter-spacing:.2px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{padding:10px 12px;border-radius:10px}
+    nav a:hover{background:var(--card)}
 
-<footer>
-<div class="wrap foot">
-<div>
-<strong>Contact</strong>
-<div class="contact small">
-<div>Contact: Claudia Neri</div>
-<div>Address: 715 N. Central Ave. Unit 214, Glendale, CA 91203</div>
-<div><a href="mailto:easeinhospice@yahoo.com">easeinhospice@yahoo.com</a></div>
-<div><a href="tel:17472156794">747.215.6794</a></div>
-</div>
-<div><a href="mailto:easeinhospice@yahoo.com">easeinhospice@yahoo.com</a></div>
-<div><a href="tel:17472156794">747.215.6794</a></div>
-</div>
-</div>
-<div>
-<strong>Site</strong>
-<div class="small">Fast, simple, and accessible. Built with GitHub Pages.</div>
-<div class="icon-row" aria-label="Site icons">
-<span class="icon" title="Favicon"><img src="/icons/ease_in_icon_only.png" alt="icon" /></span>
-<span class="icon" title="Apple Touch"><img src="/icons/ease_in_icon_only.png" alt="icon" /></span>
-<span class="icon" title="Open Graph"><img src="/icons/ease_in_icon_only.png" alt="icon" /></span>
-</div>
-</div>
-</div>
-<div class="wrap copyright">© 2025 EASE IN Hospice Care, Inc. — All rights reserved. · <a href="/privacy.html">Privacy</a></div>
-</footer>
+    .hero{padding:72px 0 40px}
+    .hero-card{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    @media (max-width:900px){.hero-card{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+    .title{font-size:2.2rem;line-height:1.15;margin:0 0 10px}
+    .subtitle{color:var(--muted);font-size:1.05rem;margin:0 0 22px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:14px;font-weight:600;border:1px solid var(--brand);}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#fff;border:none;box-shadow:0 6px 20px -8px var(--ring)}
+    .btn.secondary{background:#fff;color:var(--brand)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .info h3{margin:.2rem 0 .4rem;font-size:1.05rem}
+    .info p{margin:0;color:var(--muted)}
+
+    .map{margin-top:24px}
+    .map iframe{width:100%;height:380px;border:0;border-radius:var(--radius);}
+
+    footer{margin-top:40px;border-top:1px solid var(--border);background:#fff}
+    .foot{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;padding:22px 0}
+    @media (max-width:900px){.foot{grid-template-columns:1fr}}
+    .contact{display:grid;gap:8px}
+    .small{color:var(--muted);font-size:.92rem}
+    .copyright{border-top:1px solid var(--border);padding:14px 0;color:var(--muted);font-size:.9rem}
+    .icon-row{display:flex;gap:10px}
+    .icon{width:28px;height:28px;border-radius:8px;background:linear-gradient(90deg,var(--brand),var(--brand-2));display:grid;place-items:center}
+    .icon img{width:18px;height:18px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <img src="/ease-in-hospice/assets/logo.png" alt="EASE IN logo" />
+        <h1>EASE IN Hospice Care, Inc.</h1>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/ease-in-hospice/">Home</a></li>
+          <li><a href="/ease-in-hospice/about.html">About</a></li>
+          <li><a href="/ease-in-hospice/privacy.html">Privacy</a></li>
+          <li><a class="btn secondary" href="mailto:easeinhospice@yahoo.com?subject=Inquiry%20from%20website">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap hero">
+    <section class="hero-card">
+      <div class="card">
+        <h2 class="title">Care that meets you at home.</h2>
+        <p class="subtitle">We partner with families to navigate hospice options with dignity and clarity.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:easeinhospice@yahoo.com?subject=Consultation%20Request">Email Us</a>
+          <a class="btn secondary" href="tel:17472156794">Call 747.215.6794</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/ease-in-hospice/assets/logo.png" alt="EASE IN logo large" style="width:100%;max-width:360px;display:block;margin:0 auto;" />
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Quick info">
+      <div class="card info">
+        <h3>What we do</h3>
+        <p>Guidance, coordination, and resources to help you and your loved ones transition into hospice care.</p>
+      </div>
+      <div class="card info">
+        <h3>Who we serve</h3>
+        <p>Patients and families seeking clear information and compassionate support.</p>
+      </div>
+      <div class="card info">
+        <h3>Where we operate</h3>
+        <p>Greater Los Angeles and nearby communities.</p>
+      </div>
+    </section>
+
+    <section class="map" aria-label="Map">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://www.google.com/maps?q=715%20N.%20Central%20Ave.%20Unit%20214%20Glendale%2C%20CA%2091203&output=embed"
+        title="Google Map location of EASE IN Hospice Care, Inc."></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong>Contact</strong>
+        <div class="contact small">
+          <div>Contact: Claudia Neri</div>
+          <div>Address: 715 N. Central Ave. Unit 214, Glendale, CA 91203</div>
+          <div><a href="mailto:easeinhospice@yahoo.com">easeinhospice@yahoo.com</a></div>
+          <div><a href="tel:17472156794">747.215.6794</a></div>
+        </div>
+      </div>
+      <div>
+        <strong>Site</strong>
+        <div class="small">Fast, simple, and accessible. Built with GitHub Pages.</div>
+        <div class="icon-row" aria-label="Site icons">
+          <span class="icon" title="Favicon"><img src="/ease-in-hospice/icons/ease_in_icon_only.png" alt="icon" /></span>
+          <span class="icon" title="Apple Touch"><img src="/ease-in-hospice/icons/ease_in_icon_only.png" alt="icon" /></span>
+          <span class="icon" title="Open Graph"><img src="/ease-in-hospice/icons/ease_in_icon_only.png" alt="icon" /></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrap copyright">© 2025 EASE IN Hospice Care, Inc. — All rights reserved. · <a href="/ease-in-hospice/privacy.html">Privacy</a></div>
+  </footer>
 </body>
 </html>
