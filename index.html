@@ -267,6 +267,74 @@
     .info:nth-child(3) h3::before { content: '📍'; }
     
     .info p{margin:0;color:var(--muted)}
+/* Hospice card: special animation + glow */
+.hospice-card{
+  position:relative;
+  overflow:hidden;
+  animation: hospiceSlideIn 0.7s ease-out 0.05s both;
+}
+
+.hospice-card h2{
+  font-size:1.7rem;
+  margin-top:0;
+  margin-bottom:10px;
+}
+
+/* Animated left border (overrides the base .info::before) */
+.hospice-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:6px;
+  height:100%;
+  background:linear-gradient(180deg,var(--brand),var(--brand-2));
+  transform-origin:top;
+  animation:hospiceBorderGrow 0.7s ease-out 0.05s both;
+}
+
+/* Soft glow on hover */
+.hospice-card::after{
+  content:'';
+  position:absolute;
+  top:-40px;
+  right:-40px;
+  width:180px;
+  height:180px;
+  background:radial-gradient(circle, rgba(248,113,113,0.25), transparent 60%);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.4s ease;
+}
+
+.hospice-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 26px rgba(0,0,0,0.12);
+}
+
+.hospice-card:hover::after{
+  opacity:1;
+}
+
+@keyframes hospiceSlideIn{
+  from{
+    opacity:0;
+    transform:translateY(18px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes hospiceBorderGrow{
+  from{
+    transform:scaleY(0);
+  }
+  to{
+    transform:scaleY(1);
+  }
+}
 
    .map{
   margin-top:40px;
@@ -547,7 +615,7 @@
     <!-- Hospice definition + Lotus Review System -->
     <section class="section-block" aria-label="About hospice care and the Lotus Review System">
       <div class="two-column-grid">
-        <article class="card info">
+        <article class="card info hospice-card">
           <h2>What is hospice care?</h2>
           <p>Hospice care is specialized support for people living with a life-limiting illness. The focus is on comfort and quality of life — not cure — so that patients and families can experience as much peace as possible, often in the comfort of home.</p>
           <p>Hospice teams work together to provide:</p>
