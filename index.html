@@ -309,22 +309,77 @@
     
     @media (max-width:900px){.foot{grid-template-columns:1fr}}
     
-    .contact{
+       .contact{
+      margin-top: 8px;
+    }
+
+    .contact-card{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:14px 16px;
+      border-radius:var(--radius);
+      background:linear-gradient(135deg,#ffffff,#fdecec);
+      border:1px solid var(--border);
+      box-shadow:0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    .contact-avatar{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
       display:grid;
-      gap:10px;
+      place-items:center;
+      color:#fff;
+      font-weight:700;
+      font-size:0.95rem;
+      letter-spacing:.02em;
     }
-    
-    .contact > div {
-      padding: 8px 0;
+
+    .contact-name{
+      font-weight:700;
+      color:var(--brand);
+      margin-bottom:2px;
+    }
+
+    .contact-meta{
+      font-size:0.9rem;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    .contact-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-bottom:6px;
+    }
+
+    .contact-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--brand);
+      font-size:0.85rem;
+      font-weight:600;
+      color:var(--brand);
+      background:#fff;
       transition: all 0.3s ease;
-      border-radius: 8px;
-      padding-left: 8px;
     }
-    
-    .contact > div:hover {
-      background: var(--accent);
-      padding-left: 16px;
+
+    .contact-chip:hover{
+      background:var(--brand);
+      color:#fff;
+      transform:translateY(-1px);
     }
+
+    .contact-address{
+      margin-top:2px;
+    }
+
     
     .small{color:var(--muted);font-size:.92rem}
     
