@@ -1,238 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — EASE IN Hospice Care, Inc.</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts: Nunito -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --brand: #7b1a1a;
-            --brand-light: #b23232;
-        }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About — EASE IN Hospice Care, Inc.</title>
 
-        body {
-            font-family: 'Nunito', sans-serif;
-            background-color: #fdf2f2; /* Soft pink background to match previous lively card */
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(254, 202, 202, 0.5) 0px, transparent 50%), 
-                radial-gradient(at 100% 0%, rgba(254, 226, 226, 0.5) 0px, transparent 50%);
-            color: #1f2937;
-            min-height: 100vh;
-        }
+<!-- FAVICONS / ICONS -->
+<link rel="icon" href="/ease-in-hospice/ease_in_favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/ease-in-hospice/icons/ease_in_icon_only.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/ease-in-hospice/icons/ease_in_icon_only.png">
 
-        /* --- Animations --- */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
+<style>
+:root{
+  --text:#1f2937;
+  --muted:#6b7280;
+  --brand:#7b1a1a;
+  --brand-2:#b23232;
+  --border:#e5e7eb;
+  --card:#fafafa;
+  --accent:#f0e6e6;
+  --radius:18px;
+}
 
-        @keyframes pulse-soft {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-        }
+* {
+  box-sizing: border-box;
+}
 
-        @keyframes slideUpFade {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  color:var(--text);
+  background: linear-gradient(135deg, #ffffff 0%, #fdf5f5 100%);
+  min-height: 100vh;
+}
 
-        .animate-float {
-            animation: float 4s ease-in-out infinite;
-        }
+.wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:20px;
+}
 
-        .animate-pulse-soft {
-            animation: pulse-soft 3s ease-in-out infinite;
-        }
+header{
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+}
 
-        .animate-enter {
-            animation: slideUpFade 0.6s ease-out forwards;
-        }
+a{
+  color:var(--brand);
+  text-decoration:none;
+  transition: all 0.3s ease;
+}
 
-        /* --- Glassmorphism --- */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 32px -4px rgba(123, 26, 26, 0.1);
-            transition: all 0.3s ease;
-        }
+a:hover {
+  color: var(--brand-2);
+  transform: translateX(-3px);
+  display: inline-block;
+}
 
-        .glass-panel:hover {
-            background: rgba(255, 255, 255, 0.95);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px -4px rgba(123, 26, 26, 0.15);
-        }
+.hero{
+  display:grid;
+  gap:8px;
+  margin:30px 0 20px;
+  animation: fadeInUp 0.8s ease;
+}
 
-        /* Staggered animation delays */
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        .delay-400 { animation-delay: 400ms; }
-    </style>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo area */
+.logo-wrapper {
+  position: relative;
+  width:120px;
+  height:auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo-wrapper img{
+  width:100%;
+  height:auto;
+  border-radius:24px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.18);
+  display:block;
+  animation:pulse 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+h1{
+  margin:6px 0;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tag{
+  color:var(--muted);
+  font-size: 1.1em;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px;
+  margin-top:24px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  color: var(--brand);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h2::before {
+  font-size: 1.3em;
+}
+
+.mission-icon::before { content: '🎯'; }
+.approach-icon::before { content: '💝'; }
+.contact-icon::before { content: '📞'; }
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li {
+  padding: 12px 0 12px 40px;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.card ul li:hover {
+  background: var(--accent);
+  padding-left: 50px;
+}
+
+.card ul li::before {
+  position: absolute;
+  left: 10px;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+.card ul li:hover::before {
+  transform: scale(1.2);
+}
+
+.card ul li:nth-child(1)::before { content: '🤝'; }
+.card ul li:nth-child(2)::before { content: '💬'; }
+.card ul li:nth-child(3)::before { content: '🔗'; }
+
+.card ul li:nth-child(1) { border-left: 4px solid #f59e0b; }
+.card ul li:nth-child(2) { border-left: 4px solid #3b82f6; }
+.card ul li:nth-child(3) { border-left: 4px solid #10b981; }
+
+.card ul li:nth-child(1):hover { background: linear-gradient(to right, #fef3c7, var(--accent)); }
+.card ul li:nth-child(2):hover { background: linear-gradient(to right, #dbeafe, var(--accent)); }
+.card ul li:nth-child(3):hover { background: linear-gradient(to right, #d1fae5, var(--accent)); }
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--accent);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: var(--brand);
+  color: white;
+  transform: translateX(10px);
+}
+
+.contact-item:hover a {
+  color: white;
+}
+
+.contact-item::before {
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover::before {
+  transform: rotate(360deg);
+}
+
+.contact-name::before { content: '👤'; }
+.contact-email::before { content: '✉️'; }
+.contact-phone::before { content: '📱'; }
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(123, 26, 26, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(123, 26, 26, 0.4);
+}
+
+.decorative-hearts {
+  text-align: center;
+  font-size: 2em;
+  margin: 30px 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+footer {
+  color:var(--muted);
+  margin:40px 0 20px;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .wrap {
+    padding: 15px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+}
+</style>
 </head>
-<body class="p-4 md:p-8">
+<body>
+<header class="wrap">
+  <a href="index.html">← Home</a>
+</header>
 
-    <div class="max-w-3xl mx-auto">
-        
-        <!-- Header / Nav -->
-        <header class="mb-8 animate-enter">
-            <a href="index.html" class="inline-flex items-center gap-2 text-red-800 hover:text-red-600 font-bold transition-all hover:-translate-x-1 bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
-                <i data-lucide="arrow-left" class="w-5 h-5"></i>
-                Home
-            </a>
-        </header>
-
-        <!-- Hero Section -->
-        <section class="text-center mb-12 animate-enter delay-100">
-            <!-- Logo Placeholder (Replaced Img with Icon for robustness, swap back to img if needed) -->
-            <div class="inline-flex items-center justify-center w-24 h-24 bg-white rounded-3xl shadow-lg mb-6 animate-float mx-auto relative group cursor-default">
-                <div class="absolute inset-0 bg-red-50 rounded-3xl transform rotate-6 transition-transform group-hover:rotate-12 -z-10"></div>
-                <i data-lucide="heart-handshake" class="w-12 h-12 text-red-800"></i>
-            </div>
-            
-            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3 tracking-tight">
-                About <span class="text-red-800">EASE IN</span> Hospice Care
-            </h1>
-            <div class="inline-block px-4 py-1.5 rounded-full bg-red-100 text-red-800 font-semibold text-sm animate-pulse-soft">
-                ✨ Helping others to ease in transitions to care. ✨
-            </div>
-            
-            <div class="mt-8 text-2xl animate-float" style="animation-duration: 5s;">
-                💕 🕊️ 💕
-            </div>
-        </section>
-
-        <!-- Main Content Grid -->
-        <div class="space-y-6">
-
-            <!-- Mission Card -->
-            <section class="glass-panel rounded-2xl p-6 md:p-8 animate-enter delay-200 group">
-                <h2 class="text-2xl font-bold text-red-900 mb-4 flex items-center gap-3 border-b border-red-100 pb-3">
-                    <span class="bg-red-100 p-2 rounded-lg text-red-600 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="target" class="w-6 h-6"></i>
-                    </span>
-                    Our Mission
-                </h2>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    We help families navigate hospice care options with compassion, clarity, and respect. Our team provides timely information and coordination so loved ones can focus on what matters most.
-                </p>
-            </section>
-
-            <!-- Approach Card -->
-            <section class="glass-panel rounded-2xl p-6 md:p-8 animate-enter delay-300 group">
-                <h2 class="text-2xl font-bold text-red-900 mb-6 flex items-center gap-3 border-b border-red-100 pb-3">
-                    <span class="bg-red-100 p-2 rounded-lg text-red-600 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="heart" class="w-6 h-6"></i>
-                    </span>
-                    Our Approach
-                </h2>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-red-50/50 transition-colors">
-                        <div class="mt-1 min-w-[4px] h-full">
-                            <div class="w-1 h-full bg-amber-400 rounded-full"></div>
-                        </div>
-                        <div>
-                            <strong class="text-gray-900 block text-lg mb-1">Compassion first</strong>
-                            <span class="text-gray-600">Honoring dignity at every step of the journey.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/50 transition-colors">
-                        <div class="mt-1 min-w-[4px] h-full">
-                            <div class="w-1 h-full bg-blue-500 rounded-full"></div>
-                        </div>
-                        <div>
-                            <strong class="text-gray-900 block text-lg mb-1">Clear communication</strong>
-                            <span class="text-gray-600">Translating complex options into plain language.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-green-50/50 transition-colors">
-                        <div class="mt-1 min-w-[4px] h-full">
-                            <div class="w-1 h-full bg-green-500 rounded-full"></div>
-                        </div>
-                        <div>
-                            <strong class="text-gray-900 block text-lg mb-1">Practical support</strong>
-                            <span class="text-gray-600">Connecting you with the right resources immediately.</span>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Contact Card -->
-            <section class="glass-panel rounded-2xl p-6 md:p-8 animate-enter delay-400 group relative overflow-hidden">
-                <!-- Background decorative blob -->
-                <div class="absolute -right-10 -top-10 w-32 h-32 bg-red-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-
-                <h2 class="text-2xl font-bold text-red-900 mb-6 flex items-center gap-3 border-b border-red-100 pb-3">
-                    <span class="bg-red-100 p-2 rounded-lg text-red-600 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="phone" class="w-6 h-6"></i>
-                    </span>
-                    Contact
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-6 items-center">
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3 p-3 bg-white/50 rounded-xl border border-white hover:shadow-sm transition-all">
-                            <div class="bg-gray-100 p-2 rounded-full text-gray-600">
-                                <i data-lucide="user" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-gray-500 uppercase font-bold tracking-wider">Contact Name</div>
-                                <div class="font-bold text-gray-900 text-lg">Claudia Neri</div>
-                            </div>
-                        </div>
-
-                        <a href="mailto:easeinhospice@yahoo.com" class="flex items-center gap-3 p-3 bg-white/50 rounded-xl border border-white hover:shadow-sm hover:bg-red-50 transition-all group/link">
-                            <div class="bg-red-50 p-2 rounded-full text-red-600 group-hover/link:bg-red-100">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                            </div>
-                            <span class="font-medium text-gray-700 group-hover/link:text-red-700">easeinhospice@yahoo.com</span>
-                        </a>
-
-                        <a href="tel:17472156794" class="flex items-center gap-3 p-3 bg-white/50 rounded-xl border border-white hover:shadow-sm hover:bg-red-50 transition-all group/link">
-                            <div class="bg-red-50 p-2 rounded-full text-red-600 group-hover/link:bg-red-100">
-                                <i data-lucide="smartphone" class="w-5 h-5"></i>
-                            </div>
-                            <span class="font-medium text-gray-700 group-hover/link:text-red-700">747.215.6794</span>
-                        </a>
-                    </div>
-
-                    <!-- CTA Button Area -->
-                    <div class="flex flex-col items-center justify-center mt-4 md:mt-0">
-                        <a href="mailto:easeinhospice@yahoo.com" class="group relative px-8 py-4 bg-gradient-to-br from-red-700 to-red-900 text-white rounded-full font-bold shadow-lg hover:shadow-red-200 hover:shadow-xl transition-all transform hover:-translate-y-1 active:scale-95 flex items-center gap-3 w-full justify-center md:w-auto overflow-hidden">
-                            <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                            <i data-lucide="send" class="w-5 h-5"></i>
-                            <span>Get in Touch Today</span>
-                        </a>
-                        <p class="text-xs text-gray-400 mt-3 text-center">We typically respond within 24 hours.</p>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-
-        <!-- Footer -->
-        <footer class="text-center mt-12 mb-8 text-gray-500 animate-enter delay-400 text-sm">
-            <p class="font-medium">© 2025 EASE IN Hospice Care, Inc. — All rights reserved.</p>
-            <p class="mt-2 flex items-center justify-center gap-2 text-red-400">
-                <i data-lucide="hospital" class="w-4 h-4"></i>
-                Serving families with care and compassion
-                <i data-lucide="heart" class="w-4 h-4 fill-current"></i>
-            </p>
-        </footer>
-
+<main class="wrap">
+  <section class="hero">
+    <div class="logo-wrapper">
+      <img src="/ease-in-hospice/assets/ease-in-logo-3d.png"
+           alt="EASE IN Hospice Care logo" />
     </div>
+    <h1>About EASE IN Hospice Care, Inc.</h1>
+    <div class="tag">✨ <em>Helping others to ease in transitions to care.</em> ✨</div>
+  </section>
 
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-    </script>
+  <div class="decorative-hearts">💕 🕊️ 💕</div>
+
+  <section class="card">
+    <h2 class="mission-icon">Our Mission</h2>
+    <p>We help families navigate hospice care options with compassion, clarity, and respect. Our team provides timely information and coordination so loved ones can focus on what matters most.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="approach-icon">Our Approach</h2>
+    <ul>
+      <li><strong>Compassion first</strong> — honoring dignity at every step.</li>
+      <li><strong>Clear communication</strong> — translating options into plain language.</li>
+      <li><strong>Practical support</strong> — connecting you with the right resources.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2 class="contact-icon">Contact</h2>
+    <div class="contact-info">
+      <div class="contact-item contact-name">
+        <strong>Claudia Neri</strong>
+      </div>
+      <div class="contact-item contact-email">
+        <a href="mailto:easeinhospice@yahoo.com">easeinhospice@yahoo.com</a>
+      </div>
+      <div class="contact-item contact-phone">
+        <a href="tel:17472156794">747.215.6794</a>
+      </div>
+    </div>
+    <a href="mailto:easeinhospice@yahoo.com" class="cta-button">📧 Get in Touch Today</a>
+  </section>
+
+  <footer>
+    <p>© 2025 EASE IN Hospice Care, Inc. — All rights reserved.</p>
+    <p>🏥 Serving families with care and compassion 💙</p>
+  </footer>
+</main>
 </body>
 </html>
