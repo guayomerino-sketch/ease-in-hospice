@@ -267,100 +267,153 @@
     .info:nth-child(3) h3::before { content: '📍'; }
     
     .info p{margin:0;color:var(--muted)}
-/* Hospice card: special animation + glow */
-.hospice-card{
-  position:relative;
-  overflow:hidden;
-  animation: hospiceSlideIn 0.7s ease-out 0.05s both;
-}
 
-.hospice-card h2{
-  font-size:1.7rem;
-  margin-top:0;
-  margin-bottom:10px;
-}
+    /* Hospice card: special animation + glow */
+    .hospice-card{
+      position:relative;
+      overflow:hidden;
+      animation: hospiceSlideIn 0.7s ease-out 0.05s both;
+    }
 
-/* Animated left border (overrides the base .info::before) */
-.hospice-card::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  width:6px;
-  height:100%;
-  background:linear-gradient(180deg,var(--brand),var(--brand-2));
-  transform-origin:top;
-  animation:hospiceBorderGrow 0.7s ease-out 0.05s both;
-}
+    .hospice-card h2{
+      font-size:1.7rem;
+      margin-top:0;
+      margin-bottom:10px;
+    }
 
-/* Soft glow on hover */
-.hospice-card::after{
-  content:'';
-  position:absolute;
-  top:-40px;
-  right:-40px;
-  width:180px;
-  height:180px;
-  background:radial-gradient(circle, rgba(248,113,113,0.25), transparent 60%);
-  opacity:0;
-  pointer-events:none;
-  transition:opacity 0.4s ease;
-}
+    .hospice-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:6px;
+      height:100%;
+      background:linear-gradient(180deg,var(--brand),var(--brand-2));
+      transform-origin:top;
+      animation:hospiceBorderGrow 0.7s ease-out 0.05s both;
+    }
 
-.hospice-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 14px 26px rgba(0,0,0,0.12);
-}
+    .hospice-card::after{
+      content:'';
+      position:absolute;
+      top:-40px;
+      right:-40px;
+      width:180px;
+      height:180px;
+      background:radial-gradient(circle, rgba(248,113,113,0.25), transparent 60%);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity 0.4s ease;
+    }
 
-.hospice-card:hover::after{
-  opacity:1;
-}
+    .hospice-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 26px rgba(0,0,0,0.12);
+    }
 
-@keyframes hospiceSlideIn{
-  from{
-    opacity:0;
-    transform:translateY(18px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
+    .hospice-card:hover::after{
+      opacity:1;
+    }
 
-@keyframes hospiceBorderGrow{
-  from{
-    transform:scaleY(0);
-  }
-  to{
-    transform:scaleY(1);
-  }
-}
+    @keyframes hospiceSlideIn{
+      from{
+        opacity:0;
+        transform:translateY(18px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
 
-   .map{
-  margin-top:40px;
-  animation: fadeInUp 1.2s ease;
-}
+    @keyframes hospiceBorderGrow{
+      from{
+        transform:scaleY(0);
+      }
+      to{
+        transform:scaleY(1);
+      }
+    }
 
-/* Map in a card so it matches the rest of the design */
-.map .card{
-  padding:0;
-  overflow:hidden;
-}
+    /* Animated Lotus card */
+    .lotus-card{
+      position:relative;
+      overflow:hidden;
+      animation:hospiceSlideIn 0.7s ease-out 0.18s both;
+    }
 
-.map iframe{
-  width:100%;
-  height:320px;
-  border:0;
-  border-radius:var(--radius);
-  display:block;
-}
+    .lotus-card:hover{
+      box-shadow:0 14px 26px rgba(0,0,0,0.12);
+      transform:translateY(-3px);
+    }
 
-/* On smaller screens adjust map height */
-@media (max-width:900px){
-  .map iframe{
-    height:260px;
-  }
-}
+    .lotus-list{
+      list-style:none;
+      margin:0 0 6px 0;
+      padding:0;
+    }
+
+    .lotus-list li{
+      position:relative;
+      padding-left:32px;
+      margin-bottom:6px;
+      color:var(--muted);
+    }
+
+    .lotus-list li::before{
+      content:'';
+      position:absolute;
+      left:4px;
+      top:6px;
+      width:20px;
+      height:20px;
+      border-radius:999px;
+      background-image:url('/ease-in-hospice/assets/lotus-review-system.png');
+      background-size:cover;
+      background-position:center;
+      filter:drop-shadow(0 0 4px rgba(250,204,21,0.85));
+      animation:lotusPulse 3s ease-in-out infinite;
+    }
+
+    .lotus-list li:nth-child(2)::before{animation-delay:0.2s;}
+    .lotus-list li:nth-child(3)::before{animation-delay:0.4s;}
+    .lotus-list li:nth-child(4)::before{animation-delay:0.6s;}
+
+    @keyframes lotusPulse{
+      0%,100%{
+        transform:scale(0.96);
+        opacity:0.9;
+      }
+      50%{
+        transform:scale(1.06);
+        opacity:1;
+      }
+    }
+
+    /* Map styling */
+    .map{
+      margin-top:40px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .map .card{
+      padding:0;
+      overflow:hidden;
+    }
+
+    .map iframe{
+      width:100%;
+      height:320px;
+      border:0;
+      border-radius:var(--radius);
+      display:block;
+    }
+
+    @media (max-width:900px){
+      .map iframe{
+        height:260px;
+      }
+    }
 
     footer{
       margin-top:60px;
@@ -377,7 +430,7 @@
     
     @media (max-width:900px){.foot{grid-template-columns:1fr}}
     
-       .contact{
+    .contact{
       margin-top: 8px;
     }
 
@@ -414,14 +467,19 @@
     .contact-meta{
       font-size:0.9rem;
       color:var(--muted);
-      margin-bottom:8px;
+      margin-bottom:4px;
+    }
+
+    .contact-address{
+      font-size:0.9rem;
+      color:var(--muted);
     }
 
     .contact-actions{
       display:flex;
       flex-wrap:wrap;
       gap:6px;
-      margin-bottom:6px;
+      margin-top:10px;
     }
 
     .contact-chip{
@@ -443,11 +501,6 @@
       color:#fff;
       transform:translateY(-1px);
     }
-
-    .contact-address{
-      margin-top:2px;
-    }
-
     
     .small{color:var(--muted);font-size:.92rem}
     
@@ -538,7 +591,6 @@
       margin-bottom:4px;
     }
 
-    /* Small floating lotus icon next to the Lotus description */
     .lotus-header {
       display: flex;
       align-items: center;
@@ -628,9 +680,7 @@
           </ul>
         </article>
 
-    <article class="card info">
-
-
+        <article class="card info lotus-card">
           <div class="lotus-header">
             <img src="/ease-in-hospice/assets/lotus-review-system.png"
                  alt="Lotus Review System™ icon">
@@ -642,7 +692,7 @@
             created by Crossing Sunsets™ to reflect what families value most at the bedside.</p>
 
           <p>Each lotus represents a key quality of care:</p>
-          <ul>
+          <ul class="lotus-list">
             <li><strong>Compassionate</strong> — kind, caring, and empathetic staff</li>
             <li><strong>Responsive</strong> — quick to respond to needs and concerns</li>
             <li><strong>Supportive</strong> — helpful guidance for family and patient</li>
@@ -674,38 +724,41 @@
       </div>
     </section>
 
-   <section class="map" aria-label="Map">
-  <div class="card">
-    <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-      src="https://www.google.com/maps?q=715%20N.%20Central%20Ave.%20Unit%20214%20Glendale%2C%20CA%2091203&output=embed"
-      title="Google Map location of EASE IN Hospice Care, Inc."></iframe>
-  </div>
-</section>
-
+    <section class="map" aria-label="Map">
+      <div class="card">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+          src="https://www.google.com/maps?q=715%20N.%20Central%20Ave.%20Unit%20214%20Glendale%2C%20CA%2091203&output=embed"
+          title="Google Map location of EASE IN Hospice Care, Inc."></iframe>
+      </div>
+    </section>
   </main>
 
-<div>
-  <strong>📞 Contact</strong>
-
-  <div class="contact">
-    <div class="contact-card">
-      <div class="contact-avatar">CN</div>
-
+  <footer>
+    <div class="wrap foot">
       <div>
-        <div class="contact-name">Claudia Neri</div>
-        <div class="contact-meta small">
-          Primary contact for EASE IN Hospice Care, Inc.
+        <strong>📞 Contact</strong>
+        <div class="contact">
+          <div class="contact-card">
+            <div class="contact-avatar">CN</div>
+            <div>
+              <div class="contact-name">Claudia Neri</div>
+              <div class="contact-meta small">
+                Primary contact for EASE IN Hospice Care, Inc.
+              </div>
+              <div class="contact-address small">
+                Address: 715 N. Central Ave. Unit 214, Glendale, CA 91203
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-actions">
+            <a href="tel:17472156794" class="contact-chip">📱 Call</a>
+            <a href="mailto:easeinhospice@yahoo.com" class="contact-chip">✉️ Email</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="contact-actions">
-      <a href="tel:17472156794" class="contact-chip">📱 Call</a>
-      <a href="mailto:easeinhospice@yahoo.com" class="contact-chip">✉️ Email</a>
-    </div>
-  </div>
-</div>
-
+      <div>
         <strong>🌐 Site</strong>
         <div class="small">Fast, simple, and accessible. Built with GitHub Pages.</div>
         <div class="icon-row" aria-label="Site icons">
@@ -715,6 +768,7 @@
         </div>
       </div>
     </div>
+
     <div class="wrap copyright">
       © 2025 EASE IN Hospice Care, Inc. — All rights reserved. 💙
       <br>
